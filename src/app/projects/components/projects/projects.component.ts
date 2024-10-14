@@ -60,8 +60,9 @@ export class ProjectsComponent {
 
     const lastProject = this.projects.reduce((max, obj) => (obj.id > max.id ? obj : max), this.projects[0]);
     
+    const id = (lastProject && lastProject.id) ? lastProject.id + 1 : 1;
     const newProject = {
-      id: lastProject.id + 1,
+      id: id,
       name: title,
       email: description
     };

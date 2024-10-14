@@ -66,8 +66,9 @@ export class TasksComponent {
   addTask(title: string, completed: boolean) {
     const lastTask = this.tasks.reduce((max, obj) => (obj.id > max.id ? obj : max), this.tasks[0]);
     
+    const id = (lastTask && lastTask.id) ? lastTask.id + 1 : 1;
     const newTask = {
-      id: lastTask.id + 1,
+      id: id,
       title: title,
       completed: completed
     };

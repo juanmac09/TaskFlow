@@ -11,7 +11,7 @@ import { DeleteDialogComponent } from './helpers/delete-dialog/delete-dialog.com
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProjectsComponent, TasksComponent],
+  imports: [RouterOutlet, ProjectsComponent, TasksComponent, LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

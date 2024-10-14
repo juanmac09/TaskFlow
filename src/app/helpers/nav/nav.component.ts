@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthServiceService } from '../../auth/services/auth-service.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
+
+  constructor(private AuthService:AuthServiceService) { }
   menuOpen: boolean = false;
 
   toggleMenu() {
@@ -18,5 +21,9 @@ export class NavComponent {
     return this.menuOpen ? '' : 'closed';
   }
 
+
+  logOut(){
+    this.AuthService.logOut();
+  }
  
 }

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AuthServiceService } from '../../auth/services/auth-service.service';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [],
+  imports: [ RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })

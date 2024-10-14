@@ -1,0 +1,15 @@
+.alert {
+  padding: 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.alert-success {
+  background-color: #28a745; /* Verde */
+}
+
+.alert-error {
+  background-color: #dc3545; /* Rojo */
+}

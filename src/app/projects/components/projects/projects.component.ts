@@ -4,17 +4,20 @@ import { NavComponent } from "../../../helpers/nav/nav.component";
 import { ProjectService } from '../../services/project.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ProjectDialogComponent } from '../project-dialog/project-dialog.component';
+import { AlertComponent } from "../../../helpers/alert/alert.component";
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ProjectComponent, NavComponent],
+  imports: [ProjectComponent, NavComponent, AlertComponent],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
   projects: any[] = [];
-
+  showErrorAlert = false;
+  showSuccessAlert = false
+  message = '';
   constructor(private projectService: ProjectService, private dialog: MatDialog) {
     this.getProject();
   }
@@ -28,7 +31,12 @@ export class ProjectsComponent {
         this.projects = data;
       },
       error: (error) => {
-        console.error(error);
+        this.message = 'Error al consultar los proyectos.';
+        this.showErrorAlert = true;
+        setTimeout(() => {
+          this.message = '';
+          this.showErrorAlert = false;
+        }, 3000);
       }
     });
   }
@@ -47,6 +55,12 @@ export class ProjectsComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.addProject(result.title, result.description);
+        this.message = 'Proyecto creado exitosamente';
+        this.showSuccessAlert = true;
+        setTimeout(() => {
+          this.message = '';
+          this.showSuccessAlert = false;
+        }, 3000);
       }
     });
   }
@@ -59,14 +73,14 @@ export class ProjectsComponent {
   addProject(title: string, description: string) {
 
     const lastProject = this.projects.reduce((max, obj) => (obj.id > max.id ? obj : max), this.projects[0]);
-    
+
     const id = (lastProject && lastProject.id) ? lastProject.id + 1 : 1;
     const newProject = {
       id: id,
       name: title,
       email: description
     };
-    
+
     this.projects.push(newProject);
   }
 
@@ -76,6 +90,12 @@ export class ProjectsComponent {
    */
   handleProjectDeleted(id: number): void {
     this.deleteProject(id);
+    this.message = 'Proyecto eliminado exitosamente';
+    this.showSuccessAlert = true;
+    setTimeout(() => {
+      this.message = '';
+      this.showSuccessAlert = false;
+    }, 3000);
   }
 
   /**

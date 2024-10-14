@@ -5,17 +5,21 @@ import { TaskService } from '../../services/task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
+import { AlertComponent } from "../../../helpers/alert/alert.component";
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [TaskComponent, NavComponent],
+  imports: [TaskComponent, NavComponent, AlertComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
   tasks: any[] = [];
   projectId:number = 0;
+  showErrorAlert = false;
+  showSuccessAlert = false
+  message = '';
   constructor(private taskService: TaskService, private dialog: MatDialog, private route: ActivatedRoute) {
     this.route.params.subscribe(params => {
       this.projectId = parseInt(params['id']);
@@ -34,7 +38,12 @@ export class TasksComponent {
         this.tasks = data.filter((obj: Record<string, any>) => obj['userId'] === id);
       },
       error: (error) => {
-        console.error(error);
+        this.message = 'Error al consultar las tareas.';
+        this.showErrorAlert = true;
+        setTimeout(() => {
+          this.message = '';
+          this.showErrorAlert = false;
+        }, 3000);
       }
     });
   }
@@ -53,6 +62,12 @@ export class TasksComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.addTask(result.title, result.completed);
+        this.message = 'Tarea creado exitosamente';
+        this.showSuccessAlert = true;
+        setTimeout(() => {
+          this.message = '';
+          this.showSuccessAlert = false;
+        }, 3000);
       }
     });
   }
@@ -83,6 +98,12 @@ export class TasksComponent {
    */
   handleTaskDeleted(id: number): void {
     this.deleteTask(id);
+    this.message = 'Tarea eliminada exitosamente';
+        this.showSuccessAlert = true;
+        setTimeout(() => {
+          this.message = '';
+          this.showSuccessAlert = false;
+        }, 3000);
   }
 
   /**

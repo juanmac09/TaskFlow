@@ -3,11 +3,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 import { DeleteDialogComponent } from '../../../helpers/delete-dialog/delete-dialog.component';
+import { AlertComponent } from "../../../helpers/alert/alert.component";
 
 @Component({
   selector: 'app-task',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, AlertComponent],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })
@@ -16,8 +17,10 @@ export class TaskComponent {
   @Input() title: string = '';
   @Input() status: boolean = false;
   @Output() deleteTask = new EventEmitter();
+  showSuccessAlert = false
+  message = '';
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) { }
 
   /**
    * Opens a dialog for editing the task.
@@ -36,6 +39,12 @@ export class TaskComponent {
         this.title = result.title;
         this.status = result.completed;
       }
+      this.message = 'Tarea actualizada exitosamente.';
+      this.showSuccessAlert = true;
+      setTimeout(() => {
+        this.message = '';
+        this.showSuccessAlert = false;
+      }, 3000);
     });
   }
 

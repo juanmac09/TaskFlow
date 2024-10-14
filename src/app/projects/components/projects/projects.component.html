@@ -1,3 +1,10 @@
+@if (showErrorAlert) {
+    <app-alert [message]="message" color="error"></app-alert>
+}
+@if (showSuccessAlert ) {
+    <app-alert [message]="message" color="success"></app-alert>
+}
+
 <div class="app-container">
     <app-nav></app-nav>
   

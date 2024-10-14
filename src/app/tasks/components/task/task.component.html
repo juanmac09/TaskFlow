@@ -1,3 +1,8 @@
+@if (showSuccessAlert ) {
+    <app-alert [message]="message" color="success"></app-alert>
+}
+
+
 <div class="task-card">
   <div class="task-id">{{ id }}</div>
   <div class="task-title">{{ title }}</div>

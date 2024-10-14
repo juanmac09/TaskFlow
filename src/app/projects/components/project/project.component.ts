@@ -3,11 +3,12 @@ import { ProjectDialogComponent } from '../project-dialog/project-dialog.compone
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../../helpers/delete-dialog/delete-dialog.component';
 import { Router } from '@angular/router';
+import { AlertComponent } from "../../../helpers/alert/alert.component";
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [],
+  imports: [AlertComponent],
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
@@ -16,6 +17,8 @@ export class ProjectComponent {
   @Input() title: string = '';
   @Input() description: string = '';
   @Output() deleteProject = new EventEmitter();
+  showSuccessAlert = false
+  message = '';
 
   constructor(private dialog: MatDialog, private route: Router) { }
 
@@ -33,6 +36,12 @@ export class ProjectComponent {
       if (result) {
         this.title = result.title;
         this.description = result.description;
+        this.message = 'Tarea actualizada exitosamente.';
+        this.showSuccessAlert = true;
+        setTimeout(() => {
+          this.message = '';
+          this.showSuccessAlert = false;
+        }, 3000);
       }
     });
   }

@@ -1,0 +1,54 @@
+<div class="project-form-container">
+  <h2>{{ isEdit ? "Editar Proyecto" : "Crear Proyecto" }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="project-form">
+    <div class="form-group">
+      <label for="project-title">Título</label>
+      <input
+        id="project-title"
+        formControlName="title"
+        placeholder="Título del proyecto"
+      />
+      <span
+        *ngIf="
+          form.get('title')?.invalid &&
+          (form.get('title')?.touched || form.get('title')?.dirty)
+        "
+        class="error-message"
+      >
+        <ng-container *ngIf="form.get('title')?.errors?.['required']">
+          El título es requerido.
+        </ng-container>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="project-description">Descripción</label>
+      <textarea
+        id="project-description"
+        formControlName="description"
+        placeholder="Descripción del proyecto"
+        rows="4"
+      ></textarea>
+      <span
+        *ngIf="
+          form.get('description')?.invalid &&
+          (form.get('description')?.touched || form.get('description')?.dirty)
+        "
+        class="error-message"
+      >
+        <ng-container *ngIf="form.get('description')?.errors?.['required']">
+          La descripción es requerida.
+        </ng-container>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="submit-btn" [disabled]="form.invalid">
+        {{ isEdit ? "Actualizar" : "Crear" }}
+      </button>
+      <button type="button" class="cancel-btn" (click)="onCancel()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

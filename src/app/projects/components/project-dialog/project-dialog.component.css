@@ -1,0 +1,97 @@
+.project-form-container {
+    padding: 40px; /* Espaciado interno del contenedor */
+    background-color: #ffffff; /* Fondo blanco para claridad */
+    border-radius: 12px; /* Bordes redondeados más suaves */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    color: #333; /* Color del texto */
+    max-width: 400px; /* Ajuste a un ancho máximo de 500px */
+    width: 90%; /* Uso del 90% del ancho disponible */
+    margin: 8% auto; /* Centrar horizontalmente */
+}
+
+h2 {
+    text-align: center; /* Centrar el título */
+    color: #007bff; /* Color azul para el título */
+    font-size: 24px; /* Aumento del tamaño de la fuente del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.project-form {
+    display: flex;
+    flex-direction: column; /* Coloca elementos en columna */
+    gap: 20px; /* Espacio entre los elementos del formulario */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Coloca etiqueta y campo en columna */
+}
+
+label {
+    font-weight: 600; /* Negrita para las etiquetas */
+    color: #555; /* Color de etiqueta más suave */
+    margin-bottom: 8px; /* Espacio entre etiqueta y campo */
+    font-size: 16px; /* Tamaño de la fuente de las etiquetas */
+}
+
+input,
+textarea {
+    width: 100%; /* Ajusta al 100% del contenedor */
+    padding: 12px; /* Aumento del padding para mayor comodidad */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+input:focus,
+textarea:focus {
+    border-color: #007bff; /* Color del borde al enfocar */
+    outline: none; /* Quitar el contorno por defecto */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra sutil al enfocar */
+}
+
+.error-message {
+    color: #e74c3c; /* Color de mensaje de error más visible */
+    font-size: 14px; /* Tamaño de fuente del mensaje de error */
+    margin-top: 5px; /* Espacio encima del mensaje de error */
+}
+
+.submit-btn,
+.cancel-btn {
+    padding: 14px; /* Asegura que ambos botones tengan el mismo padding */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente consistente */
+    cursor: pointer; /* Cursor en forma de mano */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+    width: 100%; /* Hacer que ambos botones ocupen todo el ancho disponible */
+}
+
+.submit-btn {
+    background-color: #007bff; /* Color de botón principal */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+    transform: translateY(-2px); /* Ligera elevación al hacer hover */
+}
+
+.submit-btn:disabled {
+    background-color: #ccc; /* Color cuando está deshabilitado */
+    cursor: not-allowed; /* Cursor de no permitido */
+}
+
+.cancel-btn {
+    background-color: transparent; /* Fondo transparente */
+    color: #007bff; /* Color de texto */
+    border: 2px solid #007bff; /* Borde azul */
+    margin-top: 10px; /* Espacio superior para separarlo del botón de envío */
+}
+
+.cancel-btn:hover {
+    background-color: #e0f0ff; /* Fondo claro al pasar el mouse */
+    color: #0056b3; /* Color de texto al pasar el mouse */
+    transform: translateY(-2px); /* Ligera elevación al hacer hover */
+}

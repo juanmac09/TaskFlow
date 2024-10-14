@@ -1,0 +1,61 @@
+.confirm-delete-modal {
+    padding: 30px; /* Espaciado interno del modal */
+    background-color: #ffffff; /* Fondo blanco para claridad */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    color: #333; /* Color del texto */
+    max-width: 400px; /* Ancho máximo del modal */
+    width: 90%; /* Uso del 90% del ancho disponible */
+    margin: 10% auto; /* Centrar horizontalmente */
+    text-align: center; /* Centrar el texto */
+}
+
+h2 {
+    color: #d9534f; /* Color rojo para el título de advertencia */
+    font-size: 24px; /* Tamaño de la fuente del título */
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+p {
+    font-size: 16px; /* Tamaño de la fuente del mensaje */
+    margin-bottom: 20px; /* Espacio debajo del mensaje */
+}
+
+.modal-buttons {
+    display: flex; /* Para alinear los botones */
+    justify-content: center; /* Centrar los botones */
+    gap: 10px; /* Espacio entre botones */
+}
+
+.confirm-btn,
+.cancel-btn {
+    padding: 14px; /* Padding uniforme para ambos botones */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente consistente */
+    cursor: pointer; /* Cursor en forma de mano */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+    width: 120px; /* Ancho fijo para ambos botones */
+}
+
+.confirm-btn {
+    background-color: #d9534f; /* Color rojo para el botón de confirmación */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+}
+
+.confirm-btn:hover {
+    background-color: #c9302c; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Ligera elevación al hacer hover */
+}
+
+.cancel-btn {
+    background-color: transparent; /* Fondo transparente */
+    color: #007bff; /* Color de texto azul */
+    border: 2px solid #007bff; /* Borde azul */
+}
+
+.cancel-btn:hover {
+    background-color: #e0f0ff; /* Fondo claro al pasar el mouse */
+    color: #0056b3; /* Color de texto al pasar el mouse */
+    transform: translateY(-2px); /* Ligera elevación al hacer hover */
+}

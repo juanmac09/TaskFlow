@@ -1,0 +1,23 @@
+.tasks-container {
+  padding: 20px;
+  background-color: #f4f6f9; /* Fondo claro para el contenedor */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tasks-container h2 {
+  color: #2c3e50; /* Color del título */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Espaciado entre tarjetas */
+}
+
+

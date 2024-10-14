@@ -16,24 +16,4 @@ import { DeleteDialogComponent } from './helpers/delete-dialog/delete-dialog.com
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(private dialog: MatDialog) {}
-
-  
-
-
-
-  deleteConfirm(): void {
-    const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      width: '500px',  // Ancho del modal
-      height: '320px', // Altura del modal
-      data: { confirmDelete:true  }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        // Aquí puedes manejar el resultado del formulario
-        console.log('Tarea creada o editada:', result);
-      }
-    });
-  }
 }

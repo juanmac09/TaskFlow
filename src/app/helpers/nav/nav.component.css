@@ -14,15 +14,15 @@ body, html {
   top: 0;
   left: 0;
   height: 100%;
-  width: 250px; /* Ancho completo del menú abierto */
+  width: 250px; 
   background-color: #2c3e50;
   overflow-x: hidden;
-  transition: width 0.3s ease; /* Cambiar de ancho suavemente */
-  z-index: 1000; /* Para asegurar que el menú y el botón estén por encima del contenido */
+  transition: width 0.3s ease; 
+  z-index: 1000; 
 }
 
 .menu-container.closed {
-  width: 60px; /* Ancho del menú cuando está cerrado (línea delgada) */
+  width: 60px; 
 }
 
 .menu {
@@ -56,9 +56,9 @@ body, html {
 }
 
 .menu-toggle-btn {
-  position: fixed; /* Mantiene el botón visible siempre */
+  position: fixed; 
   top: 20px;
-  left: 10px; /* Alineado con el borde izquierdo */
+  left: 10px; 
   background-color: #2c3e50;
   border: none;
   color: white;
@@ -66,48 +66,47 @@ body, html {
   padding: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
-  z-index: 1001; /* Mantiene el botón por encima del menú */
+  z-index: 1001; 
 }
 
 .menu-toggle-btn:hover {
   background-color: #34495e;
 }
 
-/* Agregar este estilo para que el contenido principal se alinee correctamente */
 body {
-  display: flex; /* Permitir que el contenido y el menú estén uno al lado del otro */
+  display: flex; 
 }
 
 .content-container {
-  margin-left: 250px; /* Espacio al lado del menú abierto */
-  flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
-  padding: 20px; /* Espaciado interno */
+  margin-left: 250px; 
+  flex-grow: 1; 
+  padding: 20px; 
 }
 
 @media (max-width: 768px) {
   .menu-container {
-    width: 200px; /* Ancho completo del menú abierto en pantallas pequeñas */
+    width: 200px; 
   }
 
   .menu-container.closed {
-    width: 50px; /* Ancho del menú cuando está cerrado */
+    width: 50px; 
   }
 
   .content-container {
-    margin-left: 200px; /* Espacio al lado del menú en pantallas pequeñas */
+    margin-left: 200px; 
   }
 }
 
 @media (max-width: 480px) {
   .menu-container {
-    width: 150px; /* Ancho completo del menú abierto en pantallas muy pequeñas */
+    width: 150px; 
   }
 
   .menu-container.closed {
-    width: 50px; /* Ancho del menú cuando está cerrado */
+    width: 50px; 
   }
 
   .content-container {
-    margin-left: 150px; /* Ajustar margen para pantallas muy pequeñas */
+    margin-left: 150px; 
   }
 }

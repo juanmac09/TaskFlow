@@ -1,39 +1,37 @@
 .tasks-container {
     padding: 20px;
-    background-color: #f4f6f9; /* Fondo claro para el contenedor */
+    background-color: #f4f6f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: margin-left 0.3s ease; /* Transición suave para el margen */
-  }
+    transition: margin-left 0.3s ease;
+}
   
-  .tasks-container h2 {
-    color: #2c3e50; /* Color del título */
+.tasks-container h2 {
+    color: #2c3e50;
     margin-bottom: 20px;
     text-align: center;
-  }
+}
   
-  .tasks-grid {
+.tasks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Espaciado entre tarjetas */
-  }
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
   
-  /* Botón para crear tarea */
-  .create-task-button {
-    background-color: #4CAF50; /* Color verde */
-    color: white; /* Texto blanco */
-    padding: 12px 24px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor de mano al pasar */
-    margin: 20px auto; /* Margen automático para centrar */
-    font-size: 1.1rem; /* Tamaño de fuente */
-    transition: background-color 0.3s ease; /* Transición suave */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  }
+.create-task-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
   
-  .create-task-button:hover {
-    background-color: #45a049; /* Color más oscuro al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de elevar el botón */
-  }
-  
+.create-task-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}

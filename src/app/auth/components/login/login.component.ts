@@ -16,14 +16,24 @@ export class LoginComponent {
   showErrorAlert = false;
   message = '';
 
+  /**
+   * Initializes the LoginComponent with a reactive form for user login.
+   * The form contains two fields: username and password, both required.
+   * @param fb - FormBuilder service for creating the form.
+   * @param authService - Authentication service for handling user login.
+   */
   constructor(private fb: FormBuilder, private authService: AuthServiceService) {
-
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
+  /**
+   * Handles the form submission for user login.
+   * Validates the form and calls the authentication service.
+   * Displays an error message if the credentials are incorrect or if the form is invalid.
+   */
   onSubmit() {
     if (this.loginForm.valid) {
       const userData = {

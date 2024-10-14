@@ -23,7 +23,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; /* Asegura que ocupe toda la ventana */
+  height: 100vh;
 }
 
 .login-box {
@@ -91,7 +91,7 @@ body {
   background-color: #d73228;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .login-box {
     padding: 30px;

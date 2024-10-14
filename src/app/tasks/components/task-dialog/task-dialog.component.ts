@@ -23,7 +23,7 @@ export class TaskDialogComponent {
 
     this.form = this.fb.group({
       title: [data.title || '', Validators.required],
-      completed: [data.completed || false]  // Checkbox for task completion
+      completed: [data.completed || false]
     });
   }
 

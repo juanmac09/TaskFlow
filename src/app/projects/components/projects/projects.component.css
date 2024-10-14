@@ -1,48 +1,42 @@
-/* Asegúrate de que el contenedor principal tenga un diseño flexible */
 .projects-container {
     padding: 20px;
-    background-color: #f4f6f9; /* Fondo claro para el contenedor */
+    background-color: #f4f6f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Permite que el contenedor tome el espacio restante */
-  }
-  
-  /* Estilos para el título */
-  .projects-container h2 {
-    color: #2c3e50; /* Color del título */
+    flex: 1;
+}
+
+.projects-container h2 {
+    color: #2c3e50;
     margin-bottom: 20px;
     text-align: center;
-  }
-  
-  /* Estilo para el botón de crear proyecto */
-  .create-project-btn {
-    background-color: #27ae60; /* Color verde */
+}
+
+.create-project-btn {
+    background-color: #27ae60;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    margin-bottom: 20px; /* Espacio entre el botón y la cuadrícula */
-    display: block; /* Hace que el botón ocupe todo el ancho */
-    margin-left: auto; /* Centra el botón horizontalmente */
-    margin-right: auto; /* Centra el botón horizontalmente */
-  }
-  
-  .create-project-btn:hover {
-    background-color: #219653; /* Color más oscuro al pasar el mouse */
-  }
-  
-  /* Estilos para la cuadrícula de proyectos */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Espaciado entre tarjetas */
-  }
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-  .app-container {
-    display: flex; /* Usar flexbox para que los elementos estén uno al lado del otro */
-    height: 100vh; /* Para que ocupe toda la altura de la ventana */
-  }
-  
-  
+.create-project-btn:hover {
+    background-color: #219653;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}

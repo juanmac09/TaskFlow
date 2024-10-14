@@ -2,13 +2,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProjectDialogComponent } from '../project-dialog/project-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../../helpers/delete-dialog/delete-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project',
   standalone: true,
   imports: [],
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css'] 
+  styleUrls: ['./project.component.css']
 })
 export class ProjectComponent {
   @Input() id: number = 0;
@@ -16,7 +17,7 @@ export class ProjectComponent {
   @Input() description: string = '';
   @Output() deleteProject = new EventEmitter();
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private route: Router) { }
 
   /**
    * Opens a dialog for editing the project.
@@ -52,4 +53,13 @@ export class ProjectComponent {
       }
     });
   }
+
+  /**
+ * Navigates to the tasks page associated with the current project.
+ */
+  showTasks(): void {
+    this.route.navigate(['tasks', this.id]);
+  }
+
+
 }

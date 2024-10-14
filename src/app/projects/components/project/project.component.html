@@ -4,7 +4,7 @@
   <div class="project-description">{{ description }}</div>
   
   <div class="button-container"> <!-- Contenedor para los botones -->
-    <button class="view-tasks-btn">Ver Tareas</button> <!-- Botón para ver tareas -->
+    <button class="view-tasks-btn" (click)="showTasks()">Ver Tareas</button> <!-- Botón para ver tareas -->
     <button class="edit-btn" (click)="openProjectDialog()">Editar</button> <!-- Botón para editar -->
     <button class="delete-btn" (click)="deleteConfirm()">Eliminar</button> <!-- Botón para eliminar -->
   </div>

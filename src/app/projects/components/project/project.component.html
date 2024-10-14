@@ -1,4 +1,11 @@
 <div class="project-card">
-  <div class="project-title">Ejemplo title</div>
-  <div class="project-description">Ejemplo describe</div>
+  <div class="project-id">{{ id }}</div>
+  <div class="project-title">{{ title }}</div>
+  <div class="project-description">{{ description }}</div>
+  
+  <div class="button-container"> <!-- Contenedor para los botones -->
+    <button class="view-tasks-btn">Ver Tareas</button> <!-- Botón para ver tareas -->
+    <button class="edit-btn" (click)="openProjectDialog()">Editar</button> <!-- Botón para editar -->
+    <button class="delete-btn" (click)="deleteConfirm()">Eliminar</button> <!-- Botón para eliminar -->
+  </div>
 </div>

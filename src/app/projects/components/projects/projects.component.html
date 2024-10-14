@@ -1,13 +1,22 @@
-<app-nav></app-nav>
-
-<div class="projects-container">
-  <h2>Lista de Proyectos</h2>
-  <div class="projects-grid">
-    <app-project></app-project>
-    <app-project></app-project>
-    <app-project></app-project>
-    <app-project></app-project>
-    <app-project></app-project>
-    <app-project></app-project>
+<div class="app-container">
+    <app-nav></app-nav>
+  
+    <div class="projects-container">
+      <h2>Lista de Proyectos</h2>
+      
+      <!-- Botón para crear un nuevo proyecto -->
+      <button class="create-project-btn" (click)="openProjectDialog()">Crear Proyecto</button>
+      
+      <div class="projects-grid">
+        @for (item of projects; track $index) {
+            <app-project
+            (deleteProject)="handleProjectDeleted($event)"
+            [id]="item.id"
+            [title]="item.name"
+            [description]="item.email"
+            ></app-project>
+        }
+      </div>
+    </div>
   </div>
-</div>
+  

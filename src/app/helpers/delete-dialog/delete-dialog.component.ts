@@ -17,8 +17,7 @@ export class DeleteDialogComponent {
   }
 
   onConfirm() {
-    console.log('Funciona bien pro la veldad')
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 
   onCancel(): void {

@@ -18,35 +18,8 @@ import { DeleteDialogComponent } from './helpers/delete-dialog/delete-dialog.com
 export class AppComponent {
   constructor(private dialog: MatDialog) {}
 
-  openProjectDialog(): void {
-    const dialogRef = this.dialog.open(ProjectDialogComponent, {
-      width: '800px',  // Ancho del modal
-      height: '650px', // Altura del modal
-      data: { isEdit: false } // Cambia a true si deseas editar un proyecto
-    });
+  
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        // Aquí puedes manejar el resultado del formulario
-        console.log('Proyecto creado o editado:', result);
-      }
-    });
-  }
-
-  openTaskDialog(): void {
-    const dialogRef = this.dialog.open(TaskDialogComponent, {
-      width: '100px',  // Ancho del modal
-      height: '650px', // Altura del modal
-      data: { isEdit: true } // Cambia a true si deseas editar un proyecto
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        // Aquí puedes manejar el resultado del formulario
-        console.log('Tarea creada o editada:', result);
-      }
-    });
-  }
 
 
   deleteConfirm(): void {

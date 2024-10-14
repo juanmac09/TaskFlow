@@ -55,7 +55,7 @@ export class TasksComponent {
   openTaskDialog(): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '800px',  
-      height: '650px',
+      height: '550px',
       data: { isEdit: false }
     });
 

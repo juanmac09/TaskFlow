@@ -20,6 +20,9 @@ export class NavComponent {
   get menuClass() {
     return this.menuOpen ? '' : 'closed';
   }
+  get menuWidth() {
+    return this.menuOpen ? '250px' : '60px';
+  }
 
 
   logOut(){

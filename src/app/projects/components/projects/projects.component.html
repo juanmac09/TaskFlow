@@ -1,29 +1,31 @@
-@if (showErrorAlert) {
-    <app-alert [message]="message" color="error"></app-alert>
-}
-@if (showSuccessAlert ) {
-    <app-alert [message]="message" color="success"></app-alert>
-}
+<div
+  class="app-container"
+  [style.marginLeft]="navComponent.menuOpen ? '250px' : '60px'"
+>
+  <app-nav #navComponent></app-nav>
 
-<div class="app-container">
-    <app-nav></app-nav>
-  
-    <div class="projects-container">
-      <h2>Lista de Proyectos</h2>
-      
-      <!-- Botón para crear un nuevo proyecto -->
-      <button class="create-project-btn" (click)="openProjectDialog()">Crear Proyecto</button>
-      
-      <div class="projects-grid">
-        @for (item of projects; track $index) {
-            <app-project
-            (deleteProject)="handleProjectDeleted($event)"
-            [id]="item.id"
-            [title]="item.name"
-            [description]="item.email"
-            ></app-project>
-        }
-      </div>
+  <div class="projects-container">
+    @if (showErrorAlert) {
+    <app-alert [message]="message" color="error"></app-alert>
+    } @if (showSuccessAlert ) {
+    <app-alert [message]="message" color="success"></app-alert>
+    }
+    <h2>Lista de Proyectos</h2>
+
+    <!-- Botón para crear un nuevo proyecto -->
+    <button class="create-project-btn" (click)="openProjectDialog()">
+      Crear Proyecto
+    </button>
+
+    <div class="projects-grid">
+      @for (item of projects; track $index) {
+      <app-project
+        (deleteProject)="handleProjectDeleted($event)"
+        [id]="item.id"
+        [title]="item.name"
+        [description]="item.email"
+      ></app-project>
+      }
     </div>
   </div>
-  
+</div>

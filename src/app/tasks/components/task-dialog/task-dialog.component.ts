@@ -20,19 +20,25 @@ export class TaskDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.isEdit = data.isEdit;
-    
+
     this.form = this.fb.group({
       title: [data.title || '', Validators.required],
       completed: [data.completed || false]  // Checkbox for task completion
     });
   }
 
+  /**
+   * Submits the form if valid, closes the dialog, and returns the form values.
+   */
   onSubmit() {
     if (this.form.valid) {
       this.dialogRef.close(this.form.value);
     }
   }
 
+  /**
+   * Cancels the dialog and closes it without returning any data.
+   */
   onCancel(): void {
     this.dialogRef.close();
   }

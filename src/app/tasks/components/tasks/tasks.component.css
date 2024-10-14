@@ -21,3 +21,29 @@
 }
 
 
+.tasks-container {
+    padding: 20px;
+    background-color: #f4f6f9; /* Fondo claro para el contenedor */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrar el contenido de la tarea */
+  }
+  
+  .create-task-button {
+    background-color: #4CAF50; /* Color verde */
+    color: white; /* Texto blanco */
+    padding: 12px 24px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano al pasar */
+    margin: 20px auto; /* Margen automático para centrar */
+    font-size: 1.1rem; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .create-task-button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevar el botón */
+  }
+  

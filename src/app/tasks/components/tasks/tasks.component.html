@@ -1,7 +1,20 @@
+<app-nav></app-nav>
+
 <div class="tasks-container">
-    <h2>Tareas del Proyecto</h2>
-    <div class="tasks-grid">
-      <app-task></app-task>
-    </div>
- </div>
-  
+  @if (projectId) {
+    <h2>Tareas del Proyecto: {{ projectId }}</h2>
+    
+    <!-- Botón para crear una nueva tarea -->
+    <button (click)="openTaskDialog()" class="create-task-button">Crear Tarea</button>
+  }
+  <div class="tasks-grid">
+    @for (item of tasks; track $index) {
+      <app-task
+        (deleteTask)="handleTaskDeleted($event)"
+        [id]="item.id"
+        [title]="item.title"
+        [status]="item.completed"
+      ></app-task>
+    }
+  </div>
+</div>

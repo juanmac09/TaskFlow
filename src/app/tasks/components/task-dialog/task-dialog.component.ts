@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-task-dialog',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './task-dialog.component.html',
   styleUrl: './task-dialog.component.css'
 })
@@ -15,7 +15,7 @@ export class TaskDialogComponent {
   isEdit: boolean;
 
   constructor(
-     private fb: FormBuilder,
+    private fb: FormBuilder,
     private dialogRef: MatDialogRef<TaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
@@ -23,7 +23,7 @@ export class TaskDialogComponent {
     
     this.form = this.fb.group({
       title: [data.title || '', Validators.required],
-      description: [data.description || '', Validators.required]
+      completed: [data.completed || false]  // Checkbox for task completion
     });
   }
 
